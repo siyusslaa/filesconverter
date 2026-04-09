@@ -157,6 +157,7 @@ forms.forEach((form) => {
         body: formData,
         credentials: 'same-origin'
       });
+
       const payload = await response.json();
 
       if (!response.ok) {
