@@ -1,0 +1,37 @@
+{
+  "name": "secureconvert",
+  "version": "1.0.0",
+  "description": "Secure MVP web app for document and image conversion.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "lint": "node --check server/index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "pdf",
+    "image",
+    "conversion",
+    "security",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "multer": "^2.1.1",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
