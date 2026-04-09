@@ -7,81 +7,84 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <h1>SecureConvert</h1>
-      <p>Secure server-side document and image conversion.</p>
+    <header class="topbar">
+      <div>
+        <h1>SecureConvert</h1>
+        <p>Private local conversion. Files are auto-deleted after processing.</p>
+      </div>
     </header>
 
-    <main class="container">
-      <section class="notice" aria-live="polite">
-        <h2>Privacy Notice</h2>
-        <p>
-          Files are processed only to perform conversion on this server, then deleted automatically after conversion
-          and expiry.
-        </p>
-      </section>
-
-      <section class="cards" id="tool-grid">
-        <article class="card">
-          <h2>PDF to PNG</h2>
-          <p>Upload a PDF and convert each page into PNG images.</p>
-          <form data-endpoint="/api/convert/pdf-to-png" data-accept=".pdf" data-max="1">
-            <label for="pdf-png-input">Select PDF</label>
-            <input id="pdf-png-input" type="file" name="files" accept=".pdf,application/pdf" required />
-            <p class="constraints">Allowed: PDF · Max 1 file · Size limits apply.</p>
-            <button type="submit">Convert to PNG</button>
+    <main class="page-wrap">
+      <section class="uploader-grid">
+        <article class="upload-card dark">
+          <h2>PDF → PNG</h2>
+          <form class="convert-form" data-endpoint="/api/convert/pdf-to-png" data-max="1">
+            <input class="file-input" id="pdf-png-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="pdf-png-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for PNG conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
           </form>
+          <div class="upload-meta" aria-live="polite"></div>
           <div class="result" aria-live="polite"></div>
         </article>
 
-        <article class="card">
-          <h2>PDF to JPEG</h2>
-          <p>Upload a PDF and convert each page into JPEG images.</p>
-          <form data-endpoint="/api/convert/pdf-to-jpeg" data-accept=".pdf" data-max="1">
-            <label for="pdf-jpeg-input">Select PDF</label>
-            <input id="pdf-jpeg-input" type="file" name="files" accept=".pdf,application/pdf" required />
-            <p class="constraints">Allowed: PDF · Max 1 file · Size limits apply.</p>
-            <button type="submit">Convert to JPEG</button>
+        <article class="upload-card light">
+          <h2>PDF → JPEG</h2>
+          <form class="convert-form" data-endpoint="/api/convert/pdf-to-jpeg" data-max="1">
+            <input class="file-input" id="pdf-jpeg-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="pdf-jpeg-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for JPEG conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
           </form>
+          <div class="upload-meta" aria-live="polite"></div>
           <div class="result" aria-live="polite"></div>
         </article>
 
-        <article class="card">
-          <h2>Image to PDF</h2>
-          <p>Upload JPG, JPEG, or PNG images and convert into one PDF.</p>
-          <form data-endpoint="/api/convert/image-to-pdf" data-accept=".jpg,.jpeg,.png" data-max="10">
-            <label for="img-pdf-input">Select images</label>
-            <input
-              id="img-pdf-input"
-              type="file"
-              name="files"
-              accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-              multiple
-              required
-            />
-            <p class="constraints">Allowed: JPG/JPEG/PNG · Max 10 files · Size limits apply.</p>
-            <button type="submit">Convert to PDF</button>
+        <article class="upload-card dark">
+          <h2>JPG/PNG → PDF</h2>
+          <form class="convert-form" data-endpoint="/api/convert/image-to-pdf" data-max="10">
+            <input class="file-input" id="img-pdf-input" type="file" name="files" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple required />
+            <label for="img-pdf-input" class="dropzone" tabindex="0" role="button" aria-label="Choose images for PDF conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your images here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max files: 10 · Max file size: 25MB each</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
           </form>
+          <div class="upload-meta" aria-live="polite"></div>
           <div class="result" aria-live="polite"></div>
         </article>
 
-        <article class="card">
+        <article class="upload-card light">
           <h2>Compress PDF</h2>
-          <p>Reduce PDF size for easier sharing.</p>
-          <form data-endpoint="/api/convert/compress-pdf" data-accept=".pdf" data-max="1">
-            <label for="compress-input">Select PDF</label>
-            <input id="compress-input" type="file" name="files" accept=".pdf,application/pdf" required />
-            <p class="constraints">Allowed: PDF · Max 1 file · Size limits apply.</p>
-            <button type="submit">Compress PDF</button>
+          <form class="convert-form" data-endpoint="/api/convert/compress-pdf" data-max="1">
+            <input class="file-input" id="compress-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="compress-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for compression">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Compress now</button>
           </form>
+          <div class="upload-meta" aria-live="polite"></div>
           <div class="result" aria-live="polite"></div>
         </article>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <small>No tracking. No analytics. No ads.</small>
-    </footer>
 
     <script src="/app.js" defer></script>
   </body>
