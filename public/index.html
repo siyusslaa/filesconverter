@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureConvert</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>SecureConvert</h1>
+        <p>Private local conversion. Files are auto-deleted after processing.</p>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <section class="uploader-grid">
+        <article class="upload-card dark">
+          <h2>PDF → PNG</h2>
+          <form class="convert-form" data-endpoint="/api/convert/pdf-to-png" data-max="1">
+            <input class="file-input" id="pdf-png-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="pdf-png-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for PNG conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
+          </form>
+          <div class="upload-meta" aria-live="polite"></div>
+          <div class="result" aria-live="polite"></div>
+        </article>
+
+        <article class="upload-card light">
+          <h2>PDF → JPEG</h2>
+          <form class="convert-form" data-endpoint="/api/convert/pdf-to-jpeg" data-max="1">
+            <input class="file-input" id="pdf-jpeg-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="pdf-jpeg-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for JPEG conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
+          </form>
+          <div class="upload-meta" aria-live="polite"></div>
+          <div class="result" aria-live="polite"></div>
+        </article>
+
+        <article class="upload-card dark">
+          <h2>JPG/PNG → PDF</h2>
+          <form class="convert-form" data-endpoint="/api/convert/image-to-pdf" data-max="10">
+            <input class="file-input" id="img-pdf-input" type="file" name="files" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple required />
+            <label for="img-pdf-input" class="dropzone" tabindex="0" role="button" aria-label="Choose images for PDF conversion">
+              <span class="icon">⇪</span>
+              <strong>Drag your images here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max files: 10 · Max file size: 25MB each</small>
+            </label>
+            <button type="submit" class="action-btn">Convert now</button>
+          </form>
+          <div class="upload-meta" aria-live="polite"></div>
+          <div class="result" aria-live="polite"></div>
+        </article>
+
+        <article class="upload-card light">
+          <h2>Compress PDF</h2>
+          <form class="convert-form" data-endpoint="/api/convert/compress-pdf" data-max="1">
+            <input class="file-input" id="compress-input" type="file" name="files" accept=".pdf,application/pdf" required />
+            <label for="compress-input" class="dropzone" tabindex="0" role="button" aria-label="Choose PDF for compression">
+              <span class="icon">⇪</span>
+              <strong>Drag your PDF here to upload</strong>
+              <span class="muted">or</span>
+              <span class="browse">Browse files</span>
+              <small>Max file size: 25MB</small>
+            </label>
+            <button type="submit" class="action-btn">Compress now</button>
+          </form>
+          <div class="upload-meta" aria-live="polite"></div>
+          <div class="result" aria-live="polite"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
